@@ -1,0 +1,27 @@
+{
+  "paymentList": {
+    "data": [
+      {
+        "id": 1,
+        "name": "支付宝",
+        "icon": "alipay",
+        "desc": "推荐有支付宝账号的用户使用",
+        "selected": true
+      },
+      {
+        "id": 2,
+        "name": "微信支付",
+        "icon": "wechat",
+        "desc": "推荐安装微信5.0及以上版本的用户使用",
+        "selected": false
+      },
+      {
+        "id": 3,
+        "name": "银联支付",
+        "icon": "unionpay",
+        "desc": "银联支付",
+        "selected": false
+      }
+    ]
+  }
+}

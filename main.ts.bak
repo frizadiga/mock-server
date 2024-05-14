@@ -1,0 +1,37 @@
+#!/usr/bin/env bun
+
+import { $ } from 'bun';
+import { init, routes } from '@stricjs/app';
+import { text, json } from '@stricjs/app/send';
+
+function main() {
+//   const server = Bun.serve({
+//     port: 5555,
+//     fetch(req) {
+//       return new Response('Bun!');
+//     },
+//   });
+
+//   console.log(`Listening on http://localhost:${server.port} ...`);
+
+  const _routes = routes();
+
+  _routes.get('/', async (req) => {
+    return text('tai');
+  });
+
+  init({ 
+      routes: ['./src'],
+      // Configuration for Bun.serve
+      serve: { port: 8080 }
+  });
+}
+
+main();
+
+// async function handler(req) {
+//   await $`echo "running shell script directly from bun"`;
+//   return new Response({ status: 200, data: 'tai' });
+// }
+
+
