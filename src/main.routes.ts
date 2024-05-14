@@ -2,13 +2,14 @@ import { routes } from '@stricjs/app';
 import { text, json, status } from '@stricjs/app/send';
 import { gql_handler } from './gql.handler';
 
-function() {
-  return routes()
-    .get('/', () => text('Welcome to Stric!'))
-    // .post('/json', ctx => ctx.json().then(json));
-    // .post('/graphql', () => json({ status: 200, data: 'tai' }));
-    .post('/graphql', gql_handler);
+function _routes() {
+  const _r = routes();
+	_r.get('/', () => text('Welcome to Stric!'));
+	_r.post('/graphql', gql_handler);
+
+	return _r;
 }
 
-export default routes;
+const M = _routes();
+export default M;
 
