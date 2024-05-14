@@ -1,10 +1,17 @@
 import { init } from '@stricjs/app';
 
-// Initialize and serve the application with a concise syntax
+// initialize and serve the application with a concise syntax
 init({
   routes: ['./src'],
-  // Configuration for Bun.serve
+  // Bun.serve opt 
   serve: {
-    // port: 8080 // set from environment variable `PORT`
+    // port: 8080, // set port moved to environment variable `PORT`
+    // @ts-ignore // strict js typing issue
+    tls: {
+      // key: Bun.file('./.ssl/server.key'),
+      // cert: Bun.file('./.ssl/server.cert'),
+      key: Bun.file('./.ssl/dev.tokopedia.com-key.pem'),
+      cert: Bun.file('./.ssl/dev.tokopedia.com.pem'),
+    }
   }
 });
