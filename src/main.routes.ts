@@ -4,7 +4,7 @@ import { gql_handler } from './gql.handler';
 
 function _routes() {
   const _r = routes();
-	_r.get('/', () => text('Welcome to Stric!'));
+	_r.get('/', () => text('Welcome to Stric! #0'));
 	_r.post('/graphql', gql_handler);
 
 	return _r;
