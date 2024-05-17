@@ -22,10 +22,10 @@ function init_strictjs() {
       // port: 8080, // set port moved to environment variable `PORT`
       // @ts-ignore // strictjs typing issue
       tls: {
-        // key: Bun.file('./.ssl/server.key'),
-        // cert: Bun.file('./.ssl/server.cert'),
-        key: Bun.file('./.ssl/dev.tokopedia.com-key.pem'),
-        cert: Bun.file('./.ssl/dev.tokopedia.com.pem'),
+        key: Bun.file('./.ssl/local.key'),
+        cert: Bun.file('./.ssl/local.cert'),
+        // key: Bun.file('./.ssl/dev.tokopedia.com-key.pem'),
+        // cert: Bun.file('./.ssl/dev.tokopedia.com.pem'),
       }
     }
   });
