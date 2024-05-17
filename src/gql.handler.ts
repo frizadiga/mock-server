@@ -4,7 +4,7 @@ import { text, json, status } from '@stricjs/app/send';
 // import path from 'node:path';
 import path from 'node:path';
 
-const PATH_TO_MOCKS = '/Users/bytedance/mock-server/mocks';
+const PATH_TO_MOCKS = '/Users/bytedance/Documents/main/mock-server/mocks';
 
 // determine mock to read
 async function find_mock() {
