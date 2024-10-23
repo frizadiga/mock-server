@@ -2,8 +2,8 @@ import { init } from '@stricjs/app';
 
 function main() {
   init_strictjs();
-  // monitor_signals();
-  // monitor_events();
+  monitor_signals();
+  monitor_events();
   meta_info();
 }
 
