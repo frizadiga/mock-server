@@ -1,8 +1,7 @@
 // import { $ } from 'bun';
 // import { routes } from '@stricjs/app';
-import { json, /* status, text */ } from '@stricjs/app/send';
-// import path from 'node:path';
 import path from 'node:path';
+import { json, /* status, text */ } from '@stricjs/app/send';
 
 const PATH_TO_MOCKS = '/Users/bytedance/Documents/main/mock-server/mocks';
 
