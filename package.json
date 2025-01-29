@@ -2,9 +2,9 @@
   "name": "mock-server",
   "module": "app.ts",
   "type": "module",
-	"scripts": {
-		"start": "export PORT=5555; bun --hot run ./app.ts"
-	},
+  "scripts": {
+    "start": "export PORT=5555; bun --hot run ./app.ts"
+  },
   "devDependencies": {
     "@types/bun": "^1.1.2"
   },
