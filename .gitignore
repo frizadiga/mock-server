@@ -176,3 +176,7 @@ dist
 
 # .ssl folder
 .ssl
+
+# Mock folder
+.mocks
+
