@@ -24,8 +24,6 @@ function init_strictjs() {
       tls: {
         key: Bun.file('./.ssl/local.key'),
         cert: Bun.file('./.ssl/local.cert'),
-        // key: Bun.file('./.ssl/dev.tokopedia.com-key.pem'),
-        // cert: Bun.file('./.ssl/dev.tokopedia.com.pem'),
       }
     }
   });
