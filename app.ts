@@ -14,37 +14,40 @@ function meta_info() {
 }
 
 function init_strictjs() {
-  // initialize and serve
-  init({
-    routes: ['./src'],
-    // Bun.serve opt 
-    serve: {
-      // port: 8080, // set port moved to environment variable `PORT`
-      // @ts-ignore // strictjs typing issue
-      tls: {
-        key: Bun.file('./.ssl/local.key'),
-        cert: Bun.file('./.ssl/local.cert'),
+  try {
+    init({
+      routes: ['./src'],
+      serve: {
+        // port is set via environment variable PORT
+        // @ts-expect-error: strictjs typing issue
+        tls: {
+          key: Bun.file('./.ssl/local.key'),
+          cert: Bun.file('./.ssl/local.cert'),
+        }
       }
-    }
-  });
+    });
+  } catch (error) {
+    console.error("Failed to initialize server:", error);
+    process.exit(1);
+  }
 }
 
 function monitor_signals() {
-  ['SIGINT', 'SIGTERM', 'SIGKILL'].forEach(signal => {
+  // SIGKILL cannot be handled
+  ['SIGINT', 'SIGTERM'].forEach(signal => {
     process.on(signal, () => {
       console.log(`Received ${signal}`);
+      process.exit(0); // Optionally exit gracefully
     });
   });
 }
 
 function monitor_events() {
-  // process.on("beforeExit", (code) => {
-  //   console.log(`Event loop is empty!!`);
-  // });
-
   process.on("exit", (code) => {
     console.log(`Process is exiting with code ${code}`);
   });
 }
 
-main();
+if (Bun.main === import.meta.path) {
+  main();
+}
