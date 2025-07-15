@@ -1,0 +1,19 @@
+{
+  "name": "mock-server",
+  "module": "app.ts",
+  "type": "module",
+  "scripts": {
+    "start": "export PORT=5555; bun --hot run ./app.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@stricjs/app": "^1.0.0-rc.34",
+    "@stricjs/router": "^5.0.6",
+    "@stricjs/utils": "^2.0.7"
+  }
+}
